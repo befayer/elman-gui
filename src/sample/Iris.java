@@ -11,6 +11,8 @@ public class Iris {
 
     ArrayList<Double> results = new ArrayList<>();
     ArrayList<String> rows = new ArrayList<>();
+    ArrayList<String> arrayList = new ArrayList<>();
+
 
     public void classificate(int countEpochs, double alpha, double K){
         try {
@@ -67,6 +69,7 @@ public class Iris {
                 System.out.println(Arrays.toString(arr));
                 rows.add(Arrays.toString(arr));
             }
+            this.arrayList = neuralNetwork.getArrayList();
             System.out.println("Correct/all: " + countTrue + " / " + testData.length);
             rows.add("Correct/all: " + countTrue + " / " + testData.length);
             System.out.println("K: " +  (double) countTrue/testData.length);
@@ -85,6 +88,10 @@ public class Iris {
 
     public ArrayList<Double> getResults(){
         return this.results;
+    }
+
+    public ArrayList<String> getArrayList(){
+        return this.arrayList;
     }
 
     public static double[][] data2Matrix(String fileName, int count, int entersLen) throws IOException {

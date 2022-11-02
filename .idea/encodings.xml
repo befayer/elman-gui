@@ -2,7 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/iris.data" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/resources/sample.fxml" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/segment-challenge.data" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/segment-test.arff.txt" charset="windows-1251" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

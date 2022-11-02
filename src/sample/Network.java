@@ -19,7 +19,7 @@ public class Network {
     private final double[][] wHOPrevious;// веса выходного слоя на прошлой итерации обучения
     private final double[][] trainData;*/
 
-    private int epochs = 5;//количество эпох
+    private int epochs;//количество эпох
     private final double alpha;//коэффициент обучения от 0 до 1  = 0.3
     private final double K;//спрошу рандомно или нет задается на каждой итерации  = 0.05
     private final double[] enters; //входной массив нейронов
@@ -95,10 +95,11 @@ public class Network {
             err = 0;
             Arrays.fill(enters, 0);
             enters[0] = 1;
+
             //После уточнения значений весов перейти к пункту 2 алгоритма для расчета в очередной момент времени.
             for (int t = 0; t < trainData.length; t++) {
 
-                directDistribution(trainData[t]);//матрица признаков
+                directDistribution(trainData[t]); //матрица признаков
 
                 //3. Определить вектор погрешности обучения для нейронов
                 //выходного слоя как разность между фактическим и ожидаемым

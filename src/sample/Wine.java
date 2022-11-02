@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class SegmentChallenge {
+public class Wine {
 
     ArrayList<Double> results = new ArrayList<>();
     ArrayList<String> rows = new ArrayList<>();
@@ -16,13 +16,13 @@ public class SegmentChallenge {
     public void classificate(int countEpochs, double alpha, double K) {
         try {
             ArrayList<Double> arrayList = new ArrayList<>();
-            String fileName = "segment-challenge.data";
-            double[][] allData = data2Matrix(fileName, 1500, 20);
+            String fileName = "wine.data";
+            double[][] allData = data2Matrix(fileName, 178, 14);
             System.out.println("All data:");
             System.out.println(Arrays.deepToString(allData));
-            double[][] trainData = new double[1430][20];
-            double[][] testData = new double[70][20];
-            int countClass = 7;
+            double[][] trainData = new double[150][14];
+            double[][] testData = new double[28][14];
+            int countClass = 3;
             int partLen = allData.length / countClass;
             int testPartLen = testData.length / countClass;
             for (int k = 0; k < countClass; k++) {
@@ -41,7 +41,7 @@ public class SegmentChallenge {
             System.out.println(Arrays.deepToString(trainData));
             System.out.println("Test data:");
             System.out.println(Arrays.deepToString(testData));
-            Network neuralNetwork = new Network(countEpochs, alpha, K, 19, countClass, trainData);
+            Network neuralNetwork = new Network(countEpochs, alpha, K, 13, countClass, trainData);
             neuralNetwork.elman();
             neuralNetwork.setEntersZero();
             System.out.println("Output:");
